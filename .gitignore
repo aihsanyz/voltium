@@ -1,0 +1,7 @@
+# Derlenmiş binary
+/voltium
+# Çalışma zamanı veri dizini
+voltium-data/
+# Compose demo runtime çıktısı
+examples/data/logs/
+examples/data/voltium.lock

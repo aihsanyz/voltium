@@ -1,0 +1,17 @@
+# Geliştirme/deneme ortamı: Voltium + basit bir test upstream.
+# `make run` (docker compose up --build) ile ayağa kalkar.
+# Voltium, examples/data/config.yaml'ı okur ve api.example.com'u upstream'e yönlendirir.
+services:
+  voltium:
+    build: .
+    command: ["--data-path", "/data"]
+    ports:
+      - "8090:8080"
+    volumes:
+      - ./examples/data:/data
+    depends_on:
+      - upstream
+
+  upstream:
+    image: python:3-alpine
+    command: ["python", "-m", "http.server", "3000"]
