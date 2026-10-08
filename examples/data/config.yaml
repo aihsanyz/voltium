@@ -1,0 +1,17 @@
+api:
+  enabled: false
+  port: 8080
+proxy:
+  ports: [8080]
+projects:
+  - id: proj-1
+    name: Demo
+    services:
+      - id: svc-1
+        host: api.example.com
+        upstream: http://upstream:3000
+        timeout: 30
+      - id: svc-2
+        host: www.example.com
+        redirect: https://example.com
+        redirectCode: 301

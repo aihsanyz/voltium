@@ -1,0 +1,6 @@
+.git
+voltium-data/
+examples/data/logs/
+examples/data/voltium.lock
+voltium
+*.log
